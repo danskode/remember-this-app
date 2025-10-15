@@ -4,13 +4,13 @@ import fs from "fs";
 
 const app = express();
 
-console.log("hello world");
-
 app.use(express.static("public"));
 
 // ================================= PAGES =====================================
 
 import { frontpagePage } from "./util/pagesUtil.js";
+import { error } from "console";
+import { type } from "os";
 
 app.get("/", (req, res) => {
   res.send(frontpagePage);
@@ -31,6 +31,22 @@ app.get("/api/topics", (req, res) => {
     }
     res.send(data);
   });
+});
+
+app.get("/api/topics/:id", (req, res) => {
+  const topicId = Number(req.params.id);
+  const foundTopic = fs.readFile(
+    "./data/topics.json",
+    "utf-8",
+    (error, data) => {
+      if (error) {
+        console.error("Data not retrieved due to error:", error);
+        res.send({ data: "Error in retrieving topic ..." });
+      }
+    }
+  );
+
+  res.send(foundTopic);
 });
 
 // ================================= SERVER INFO ===============================
