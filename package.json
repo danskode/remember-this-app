@@ -1,0 +1,31 @@
+{
+  "name": "rememberthis",
+  "version": "0.0.1",
+  "description": "This is first mandatory assignment in full stack node.js",
+  "keywords": [
+    "assignment",
+    "node.js",
+    "learning",
+    "education",
+    "javascript"
+  ],
+  "homepage": "https://github.com/danskode/remember-this-app#readme",
+  "bugs": {
+    "url": "https://github.com/danskode/remember-this-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danskode/remember-this-app.git"
+  },
+  "license": "MIT",
+  "author": "Danskode",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Let's run a test here ...\"",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
