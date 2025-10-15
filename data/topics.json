@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "topic": "Express",
+    "description": "A library you can import to easily handle HTTP routes in Node.js."
+  },
+  {
+    "id": 2,
+    "topic": "ES Modules",
+    "description": "Modern JavaScript module syntax using 'import' and 'export'."
+  }
+]
