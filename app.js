@@ -18,35 +18,17 @@ app.get("/", (req, res) => {
 
 // ================================= APIS ======================================
 
+const data = JSON.parse(fs.readFileSync("./data/topics.json", "utf-8"));
+
 app.get("/api/topics", (req, res) => {
-  const data = fs.readFile("./data/topics.json", "utf-8", (error, data) => {
-    if (error) {
-      console.error(
-        "Something went wrong trying to read the data. Error:",
-        error
-      );
-      return res
-        .status(500)
-        .send({ data: "Could not read data from file ..." });
-    }
-    res.send(data);
-  });
+  res.send(data);
 });
 
 app.get("/api/topics/:id", (req, res) => {
   const topicId = Number(req.params.id);
-  const foundTopic = fs.readFile(
-    "./data/topics.json",
-    "utf-8",
-    (error, data) => {
-      if (error) {
-        console.error("Data not retrieved due to error:", error);
-        res.send({ data: "Error in retrieving topic ..." });
-      }
-    }
-  );
+  const topic = data.find((topic) => topic.id === topicId);
 
-  res.send(foundTopic);
+  res.send(topic);
 });
 
 // ================================= SERVER INFO ===============================
