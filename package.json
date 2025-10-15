@@ -22,8 +22,9 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Let's run a test here ...\"",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "prod": "node app.js",
+    "test": "echo \"Let's run a test here ...\""
   },
   "dependencies": {
     "express": "^5.1.0"
