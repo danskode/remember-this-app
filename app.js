@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-import fs from "fs";
 
 const app = express();
 
@@ -8,26 +7,44 @@ app.use(express.static("public"));
 
 // ================================= PAGES =====================================
 
-import { frontpagePage } from "./util/pagesUtil.js";
-import { error } from "console";
-import { type } from "os";
+// Import my functions to compile my html pages SSR style in my templating engine ...
+import {
+  frontpagePage,
+  compileAllTopicsPage,
+  compileSingleTopicPage,
+} from "./util/pagesUtil.js";
 
 app.get("/", (req, res) => {
   res.send(frontpagePage);
 });
 
+app.get("/topics", (req, res) => {
+  const topics = getTopicsData();
+  const html = compileAllTopicsPage(topics);
+  res.send(html);
+});
+
+app.get("/topics/:id", (req, res) => {
+  const topic = getTopicData(req.params.id);
+  if (!topic) return res.status(404).send("Topic not found");
+
+  const html = compileSingleTopicPage(topic);
+  res.send(html);
+});
+
 // ================================= APIS ======================================
 
-const data = JSON.parse(fs.readFileSync("./data/topics.json", "utf-8"));
+// Import my data service to work with JSON data ...
+import { getTopicsData, getTopicData } from "./data/dataService.js";
 
 app.get("/api/topics", (req, res) => {
-  res.send(data);
+  res.send(getTopicsData());
 });
 
 app.get("/api/topics/:id", (req, res) => {
   const topicId = Number(req.params.id);
-  const topic = data.find((topic) => topic.id === topicId);
-
+  const topic = getTopicData(topicId);
+  if (!topic) return res.status(404).send({ data: "No topic found ..." });
   res.send(topic);
 });
 
