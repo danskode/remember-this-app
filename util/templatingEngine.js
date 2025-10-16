@@ -6,10 +6,10 @@ const footer = readPage("./public/components/footer/footer.html");
 
 export function compilePage(pageContent, option = {}) {
   return (
-    head +
-    header
+    head
       .replace("{{TITLE}}", option.titleTag || "Remember This App")
       .replace("{{CSS_LINKS}}", option.cssLinks || "") +
+    header +
     pageContent
       .replace(
         "{{TOPICS_LIST}}",

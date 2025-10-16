@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 15vh; /* logo + nav samlet */
+  background: lightblue; /* for testing */
+}
+
+main {
+  flex: 1; /* fylder alt resterende plads */
+  background: lightyellow;
+}
+
+footer {
+  height: 5vh;
+  background: red;
+}
