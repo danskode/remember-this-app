@@ -3,7 +3,7 @@
     "id": 1,
     "topic": "Introduction to Node.js and Course Overview",
     "date": "Aug 28",
-    "description": "Download Node.js from <a href='https://nodejs.org'>nodejs.org</a> and set up your environment. In VS Code, enable Auto Save, Mouse Wheel Zoom, and shell command integration so you can open VS Code from the terminal using <code>code .</code><br><br>Node.js is basically a compiler that lets JavaScript run outside the browser. It started with the V8 engine from Aarhus — a virtual machine that made JS fast and efficient. Think of Node as a small browser that packages software to run anywhere. Other ecosystems have similar tools (e.g. Tauri in Rust).<br><br>Used for:<ul><li>Web apps</li><li>Desktop software</li><li>CLI tools</li><li>Cron jobs</li><li>Microservices between servers/systems</li></ul>Not ideal for embedded systems.<br><br>To start a Node REPL, type <code>node</code> in the terminal.<br><br>Understand what Node is, how JavaScript evolved from being a browser-only language, and what makes Node.js different from traditional server runtimes.",
+    "description": "Download Node.js from <a href='https://nodejs.org'>nodejs.org</a> and set up your environment. In VS Code, enable Auto Save, Mouse Wheel Zoom, and shell command integration so you can open VS Code from the terminal using <code>code .</code><br><br>Node.js is basically a compiler that lets JavaScript run outside the browser. It started with the V8 engine from Aarhus — a virtual machine that made JS fast and efficient. Think of Node as a small browser that packages software to run anywhere. Other ecosystems have similar tools (e.g. Tauri in Rust).<br><br>Used for:<ul><li>Web apps</li><li>Desktop software</li><li>CLI tools</li><li>Cron jobs</li><li>Microservices between servers/systems</li></ul>Not ideal for embedded systems.<br><br>To start a Node REPL, type <code>node</code> in the terminal.<br>",
     "tags": ["node.js", "setup", "vscode", "intro"]
   },
   {
@@ -30,7 +30,7 @@
     "id": 4,
     "topic": "Clean Code and Git Basics",
     "date": "Aug 28",
-    "description": "Keep your code clean and readable — even without a linter. Follow conventions for indentation, naming, and structure. Always commit small, meaningful changes to Git.<br><br>Work with Git in the terminal:<br><code>git init<br>git add -A<br>git commit -m 'Initial commit'</code><br><br>Push to GitHub using clear, atomic commits.",
+    "description": "Keep your code clean and readable — even without a linter. Follow conventions for indentation, naming, and structure. Always commit small, meaningful changes to Git.<br><br>Work with Git in the terminal:<br><code>git init<br>git add -A<br>git commit -m 'Initial commit'<br>git push</code>",
     "tags": ["clean code", "git", "workflow"]
   },
   {
