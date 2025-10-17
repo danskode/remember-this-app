@@ -22,11 +22,14 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": "cross-env PORT=9090 nodemon app.js",
     "prod": "node app.js",
     "test": "echo \"Let's run a test here ...\""
   },
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "10.1.0"
   }
 }
