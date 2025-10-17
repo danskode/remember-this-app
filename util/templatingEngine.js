@@ -4,8 +4,6 @@ const head = readPage("./public/components/head/head.html");
 const header = readPage("./public/components/header/header.html");
 const footer = readPage("./public/components/footer/footer.html");
 
-console.log(head + header + footer);
-
 export function compilePage(pageContent, option = {}) {
   return (
     head
