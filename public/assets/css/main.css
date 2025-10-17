@@ -1,7 +1,11 @@
+/* Generelt layout */
 html,
 body {
   height: 100%;
   margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
 }
 
 body {
@@ -10,16 +14,56 @@ body {
 }
 
 header {
-  height: 15vh; /* logo + nav samlet */
-  background: lightblue; /* for testing */
-}
-
-main {
-  flex: 1; /* fylder alt resterende plads */
-  background: lightyellow;
+  height: 15vh;
+  background: #5dade2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
 }
 
 footer {
   height: 5vh;
-  background: red;
+  background: #e74c3c;
+}
+
+/* Main område */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+/* Simpelt kort */
+.topic-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card h1 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #2c3e50;
+}
+
+.topic-card .description {
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+.topic-card .tags {
+  display: inline-block;
+  background-color: #f0f2f5;
+  color: #3498db;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  margin-top: 1rem;
 }
