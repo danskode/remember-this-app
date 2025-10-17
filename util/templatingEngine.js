@@ -31,13 +31,9 @@
 
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 function readPage(relativePath) {
-  const absolutePath = path.join(__dirname, "..", relativePath);
+  const absolutePath = path.join(process.cwd(), relativePath);
   return fs.readFileSync(absolutePath).toString();
 }
 
