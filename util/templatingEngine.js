@@ -1,8 +1,51 @@
-import fs from "fs";
+// import fs from "fs";
 
-const head = readPage("./public/components/head/head.html");
-const header = readPage("./public/components/header/header.html");
-const footer = readPage("./public/components/footer/footer.html");
+// const head = readPage("./public/components/head/head.html");
+// const header = readPage("./public/components/header/header.html");
+// const footer = readPage("./public/components/footer/footer.html");
+
+// export function compilePage(pageContent, option = {}) {
+//   return (
+//     head
+//       .replace("{{TITLE}}", option.titleTag || "Remember This App")
+//       .replace("{{CSS_LINKS}}", option.cssLinks || "") +
+//     header +
+//     pageContent
+//       .replace(
+//         "{{TOPICS_LIST}}",
+//         option.topicsList || "Nothing to learn to here ..."
+//       )
+//       .replace("{{TOPIC_NAME}}", option.topic || "No topic in dataset ...")
+//       .replace(
+//         "{{TOPIC_DESCRIPTION}}",
+//         option.description || "No description in dataset ..."
+//       )
+//       .replace("{{TOPIC_TAGS}}", option.tags || "No tags in dataset ...") +
+//     footer
+//   );
+// }
+
+// export function readPage(path) {
+//   return fs.readFileSync(path).toString();
+// }
+
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// __dirname i ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function readPage(filePath) {
+  const fullPath = path.join(__dirname, filePath);
+  return fs.readFileSync(fullPath, "utf-8");
+}
+
+// Brug relativt til templatingEngine.js
+const head = readPage("../public/components/head/head.html");
+const header = readPage("../public/components/header/header.html");
+const footer = readPage("../public/components/footer/footer.html");
 
 export function compilePage(pageContent, option = {}) {
   return (
@@ -25,6 +68,4 @@ export function compilePage(pageContent, option = {}) {
   );
 }
 
-export function readPage(path) {
-  return fs.readFileSync(path).toString();
-}
+export { readPage };
