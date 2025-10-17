@@ -48,17 +48,19 @@ app.get("/api/topics/:id", (req, res) => {
   res.send(topic);
 });
 
-// ================================= SERVER INFO ===============================
-
-const PORT = Number(process.env.PORT) || 8080;
-
-app.listen(PORT, (error) => {
-  if (error) {
-    console.log("Server didn't start on port", PORT);
-  }
-  console.log("Server is running on port", PORT);
-});
-
 // ================================= VERCEL FIX ===============================
 
 export default app;
+
+// ================================= SERVER INFO ===============================
+
+if (process.env.VERCEL !== "1") {
+  const PORT = Number(process.env.PORT) || 8080;
+
+  app.listen(PORT, (error) => {
+    if (error) {
+      console.log("Server didn't start on port", PORT);
+    }
+    console.log("Server is running on port", PORT);
+  });
+}
