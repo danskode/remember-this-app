@@ -14,7 +14,9 @@ import {
 } from "./util/pagesUtil.js";
 
 app.get("/", (req, res) => {
-  res.send(frontpagePage);
+  const topics = getTopicsData();
+  const html = compileAllTopicsPage(topics);
+  res.send(html);
 });
 
 app.get("/topics", (req, res) => {
