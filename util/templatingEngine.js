@@ -1,8 +1,8 @@
 import fs from "fs";
 
-const head = readPage("./public/components/head/head.html");
-const header = readPage("./public/components/header/header.html");
-const footer = readPage("./public/components/footer/footer.html");
+const head = readPage("/public/components/head/head.html");
+const header = readPage("/public/components/header/header.html");
+const footer = readPage("/public/components/footer/footer.html");
 
 export function compilePage(pageContent, option = {}) {
   return (
