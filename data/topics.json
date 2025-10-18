@@ -206,7 +206,7 @@
     "id": 28,
     "topic": "Improving Code Structure",
     "date": "Oct 9",
-    "description": "Learn how to structure your Node.js/Express projects so your code is clean, modular, and maintainable. Avoid long, monolithic files by splitting functionality into routes, controllers, and utilities.<br><br>**Example structure:**<br><code>project/<br>├─ app.js<br>├─ nodemon.js<br>├─ util/<br>│  └─ pagesUtil.js/<br>│  └─ templatingEngine.js<br>└─ public/<br>│  └─ index.html</code><br><br>**Tips:**<ul><li>Utilities for shared functions like formatting dates or validating input</li></ul>",
+    "description": "Learn how to structure your Node.js/Express projects so your code is clean, modular, and maintainable. Avoid long, monolithic files by splitting functionality into bits that later on proberbly will include folders for routes and controllers to mimmic what we learn in java (model, controller, repository), but for now we only have utilities (util and here also data instead of a persistant DB solution).<br><br>**Example structure:**<br><code>project/<br>├─ app.js<br>├─ nodemon.js<br>├─ util/<br>│  └─ pagesUtil.js/<br>│  └─ templatingEngine.js<br>└─ public/<br>│  └─ index.html</code><br><br>**Tips:**<ul><li>Utilities for shared functions like formatting dates or validating input</li></ul>",
     "tags": ["clean code", "node.js", "structure", "modular", "express"]
   }
 ]
