@@ -4,7 +4,12 @@
     "topic": "Introduction to Node.js and Course Overview",
     "date": "Aug 28",
     "description": "Download Node.js from <a href='https://nodejs.org'>nodejs.org</a> and set up your environment. In VS Code, enable Auto Save, Mouse Wheel Zoom, and shell command integration so you can open VS Code from the terminal using <code>code .</code><br><br>Node.js is basically a compiler that lets JavaScript run outside the browser. It started with the V8 engine from Aarhus — a virtual machine that made JS fast and efficient. Think of Node as a small browser that packages software to run anywhere. Other ecosystems have similar tools (e.g. Tauri in Rust).<br><br>Used for:<ul><li>Web apps</li><li>Desktop software</li><li>CLI tools</li><li>Cron jobs</li><li>Microservices between servers/systems</li></ul>Not ideal for embedded systems.<br><br>To start a Node REPL, type <code>node</code> in the terminal.<br>",
-    "tags": ["node.js", "setup", "vscode", "intro"]
+    "tags": [
+      "node.js",
+      "setup",
+      "vscode",
+      "intro"
+    ]
   },
   {
     "id": 2,
@@ -24,42 +29,72 @@
     "topic": "REST API Design and Conventions",
     "date": "Aug 28",
     "description": "Learn how to design a REST API that is predictable, consistent, and follows common conventions, including the Richardson Maturity Model.<br><br>**Core conventions we follow:**<ul><li>Use the correct HTTP verb for the action:<br><code>GET</code> — read data<br><code>POST</code> — create data<br><code>PUT / PATCH</code> — update data<br><code>DELETE</code> — remove data</li><li>Use plural nouns for collections:<br><code>/users</code> not <code>/user</code></li><li>Keep endpoints consistent with the system resources and structure:<br><code>GET /users/:id</code> retrieves a specific user</li></ul><br>**Example endpoints:**<br><code>GET /users       // list all users<br>POST /users      // create a new user<br>GET /users/:id   // get one user<br>PUT /users/:id   // update user<br>DELETE /users/:id // delete user</code><br><br>**Additional practices from the course:**<ul><li>Always return JSON for GET requests: <code>{ key: 'value' }</code></li><li>Design APIs that are easy to read and predictable</li><li>Use linters and clean code principles even though not mandatory — improves maintainability</li></ul><br>Following these conventions ensures your REST APIs are scalable, understandable by other developers, and compatible with frontend clients.",
-    "tags": ["rest api", "backend", "http", "crud", "express"]
+    "tags": [
+      "rest api",
+      "backend",
+      "http",
+      "crud",
+      "express"
+    ]
   },
   {
     "id": 4,
     "topic": "Clean Code and Git Basics",
     "date": "Aug 28",
     "description": "Keep your code clean and readable — even without a linter. Follow conventions for indentation, naming, and structure. Always commit small, meaningful changes to Git.<br><br>Work with Git in the terminal:<br><code>git init<br>git add -A<br>git commit -m 'Initial commit'<br>git push</code>",
-    "tags": ["clean code", "git", "workflow"]
+    "tags": [
+      "clean code",
+      "git",
+      "workflow"
+    ]
   },
   {
     "id": 5,
     "topic": "Functions, Scope, and Callbacks",
     "date": "Sept 4",
     "description": "Learn how functions, scope, and callbacks work in JavaScript, especially in Node.js where asynchronous programming is common.<br><br>**Callbacks:**<br>Callbacks are functions passed as arguments to other functions. They let you handle unpredictability and perform operations asynchronously, while still controlling the sequence of execution.<br><br>Example:<br><code>function fetchData(callback) {<br>  setTimeout(() =&gt; callback('Done'), 1000);<br>}<br>fetchData(msg =&gt; console.log(msg));</code><br><br>**Key points learned in class:**<ul><li>Callbacks execute after the parent function finishes</li><li>They allow multiple operations to run concurrently without blocking the event loop</li><li>Challenges include nested callbacks (callback hell) and complex flow control</li></ul><br>**Scope:**<br>Understand block scope with <code>let</code> and <code>const</code>, and function scope. Variables should be declared in the smallest possible scope to avoid conflicts.<br><br>**Why it matters:**<br>Callbacks are fundamental for working with Node.js APIs, HTTP requests, reading files, and any asynchronous operations. Part of the promises or async/await way of working: cleaner asynchronous code.",
-    "tags": ["callbacks", "asynchronous", "javascript", "scope", "node.js"]
+    "tags": [
+      "callbacks",
+      "asynchronous",
+      "javascript",
+      "scope",
+      "node.js"
+    ]
   },
   {
     "id": 6,
     "topic": "Synchronous vs Asynchronous Code",
     "date": "Sept 4",
     "description": "Synchronous code blocks execution until a function finishes. Asynchronous code is non-blocking — multiple things can run in parallel.<br><br>**Synchronous example:**<br><code>console.log('Start');<br>for (let i = 0; i &lt; 3; i++) { console.log(i); }<br>console.log('End');</code><br>Output: Start, 0, 1, 2, End — everything runs in order.<br><br>**Asynchronous example:**<br><code>console.log('Start');<br>setTimeout(() =&gt; console.log('Async done'), 1000);<br>console.log('End');</code><br>Output: Start, End, Async done — async code runs later, not blocking the main flow.<br><br>Async code keeps apps responsive, especially in I/O-heavy operations like reading files, fetching APIs, or handling HTTP requests in Node.js.",
-    "tags": ["asynchronous", "javascript", "event loop", "node.js"]
+    "tags": [
+      "asynchronous",
+      "javascript",
+      "event loop",
+      "node.js"
+    ]
   },
   {
     "id": 7,
     "topic": "Build Tools and npm",
     "date": "Sept 4",
     "description": "Build tools help us interact with programming languages efficiently. Examples: Maven, Gradle, Ant, NuGet, Pip, npm, yarn, pnpm.<br><br>npm is to Node.js what Maven is to Java:<br><table><tr><th>Maven</th><th>npm</th></tr><tr><td>pom.xml</td><td>package.json</td></tr><tr><td>meta-information</td><td>meta-information</td></tr><tr><td>dependencies</td><td>dependencies</td></tr><tr><td>life cycles</td><td>scripts</td></tr></table><br>Never push <code>node_modules</code> or IDE folders to GitHub — they are large and user-specific.<br><br>Use npm scripts for automation:<br><code>npm run dev</code> (nodemon)<br><code>npm run prod</code> (node app.js)</code>",
-    "tags": ["npm", "build tools", "automation", "node.js"]
+    "tags": [
+      "npm",
+      "build tools",
+      "automation",
+      "node.js"
+    ]
   },
   {
     "id": 8,
     "topic": "Express and HTTP Basics",
     "date": "Sept 4",
     "description": "Express is a lightweight web framework for Node.js.<br><br>Used for:<ul><li>APIs</li><li>Single-page apps</li><li>Real-time apps</li></ul><br>Install:<br><code>npm i -g express</code><br>Create sample app:<br><code>npx express-generator --view=pug myapp</code><br><br>Check headers:<br><code>curl -I &lt;url&gt;</code><br><br>Server model = request (client) + response (server). Always return JSON in GET:<br><code>{ key: 'value' }</code><br><br>GET can use:<ul><li>Path params (<code>:id</code>) → <code>req.params.id</code></li><li>Query params (<code>?id=</code>) → <code>req.query.id</code></li></ul>POST/PUT/PATCH use body params.<br><br>Exam tip: <code>app.get()</code> takes two arguments — endpoint and callback (<code>(req, res)</code>).",
-    "tags": ["express", "http", "routing"]
+    "tags": [
+      "express",
+      "http",
+      "routing"
+    ]
   },
   {
     "id": 9,
@@ -81,132 +116,230 @@
     "topic": "CRUD and Fetch",
     "date": "Sept 18",
     "description": "Learn to build a full CRUDable REST API following naming and HTTP conventions. Handle Create, Read, Update, Delete operations clearly with Express.<br><br>**Frontend fetch example:**<br><code>fetch('/api/data')<br>  .then(res =&gt; res.json())<br>  .then(data =&gt; console.log(data));</code><br><br>**Express backend:**<br>Use middleware to parse JSON in POST/PUT/PATCH requests:<br><code>app.use(express.json());<br>app.post('/api/data', (req, res) =&gt; {<br>  console.log(req.body);<br>  res.send({ data: 'Data received' });<br>});</code><br><br>**Tips learned in class:**<ul><li>Always follow REST conventions: use the right HTTP verb, plural nouns, and consistent endpoints</li><li>Understand the anatomy of a URL and where to put path params vs query params</li><li>For POST/PUT/PATCH, always parse the request body</li><li>Use fetch for all client-server communication; returns a promise</li><li>Keep your API predictable and JSON-based</li></ul><br>This knowledge is essential for connecting frontend pages with backend endpoints and building interactive, data-driven web apps.",
-    "tags": ["crud", "fetch", "rest api", "express", "frontend", "backend"]
+    "tags": [
+      "crud",
+      "fetch",
+      "rest api",
+      "express",
+      "frontend",
+      "backend"
+    ]
   },
   {
     "id": 11,
     "topic": "Modules and Static Files",
     "date": "Sept 25",
     "description": "Learn to serve static files securely:<br><code>app.use(express.static('public'));</code><br><br>Understand CommonJS vs. ES Modules:<br><code>require()</code> vs. <code>import/export</code>.<br><br>Client-side modules:<br><code>&lt;script type='module' src='main.js'&gt;&lt;/script&gt;</code><br><br>Initialize npm projects:<br><code>npm init</code> — adds meta info in package.json.",
-    "tags": ["modules", "static files", "express"]
+    "tags": [
+      "modules",
+      "static files",
+      "express"
+    ]
   },
   {
     "id": 12,
     "topic": "Environment Variables",
     "date": "Oct 2",
     "description": "Learn that environment variables are session-based (not global).<br><br>Inspect them:<br><code>console.log(process.env)</code><br><br>Set with defaults:<br><code>const PORT = Number(process.env.PORT) || 8080;</code><br><br>Cross-platform scripts:<br><code>npm i -D cross-env</code><br><br>Example:<br><code>\"dev\": \"cross-env PORT=9090 nodemon app.js\"</code><br><br>Secrets belong in <code>.env</code> files.",
-    "tags": ["environment", "config", "node.js"]
+    "tags": [
+      "environment",
+      "config",
+      "node.js"
+    ]
   },
   {
     "id": 13,
     "topic": "Semantic HTML",
     "date": "Oct 2",
     "description": "Learn to structure HTML semantically: use <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> etc. Improves accessibility and SEO. Keep layouts consistent and document your design choices.",
-    "tags": ["html", "frontend", "accessibility"]
+    "tags": [
+      "html",
+      "frontend",
+      "accessibility"
+    ]
   },
   {
     "id": 14,
     "topic": "Server-Side Rendering (SSR)",
     "date": "Oct 9",
     "description": "Learn how SSR improves load times and SEO since pages are rendered server-side.<br><br>Send HTML:<br><code>res.send('&lt;h1&gt;Hello&lt;/h1&gt;');</code><br>Or read files:<br><code>import fs from 'fs';<br>const frontpage = fs.readFileSync('./public/pages/frontend/index.html').toString();</code><br><br>Use <code>readFileSync</code> only at startup (it blocks).<br><br>Local tunnel for testing:<br><code>lt --port 8080 -s anders</code>",
-    "tags": ["ssr", "express", "fs"]
+    "tags": [
+      "ssr",
+      "express",
+      "fs"
+    ]
   },
   {
     "id": 15,
     "topic": "Routers and File Reading",
     "date": "Oct 9",
     "description": "Learn how to organize your Express server using routers to split endpoints into separate modules. This keeps your code clean and manageable, especially as the app grows:<br><br>Example of a router:<br><code>import express from 'express';<br>const router = express.Router();<br>router.get('/users', (req, res) => {<br>  res.json([{id:1, name:'Alice'}]);<br>});<br>export default router;</code><br><br>Then mount it in your main app:<br><code>import userRouter from './routes/users.js';<br>app.use('/api', userRouter);</code><br><br>Combine this with reading files from the filesystem using Node’s <code>fs</code> module. For static HTML pages or templates, read files at startup to avoid blocking requests:<br><code>import fs from 'fs';<br>const homepage = fs.readFileSync('./public/pages/home.html').toString();<br>app.get('/', (req, res) => res.send(homepage));</code><br><br>This approach makes your endpoints modular and your file handling predictable — the backbone of a clean Node.js backend.",
-    "tags": ["routers", "express", "fs", "node.js", "backend"]
+    "tags": [
+      "routers",
+      "express",
+      "fs",
+      "node.js",
+      "backend"
+    ]
   },
   {
     "id": 16,
     "topic": "Nodemon and Development Tools",
     "date": "Oct 9",
     "description": "Learn to use <code>nodemon</code> for live reloading during development: Configure with <code>nodemon.json</code> to watch extensions like <code>js, html, css</code>.",
-    "tags": ["nodemon", "dev tools"]
+    "tags": [
+      "nodemon",
+      "dev tools"
+    ]
   },
   {
     "id": 17,
     "topic": "Node.js Overview and Philosophy",
     "date": "General",
     "description": "Learn that: Node.js runs JavaScript outside the browser, powered by the V8 engine. It’s designed for I/O-heavy, event-driven workloads.<br><br>Core ideas:<ul><li>Event loop over threads</li><li>Non-blocking I/O</li><li>Asynchronous programming</li></ul><br>Perfect for APIs, microservices, and automation — not for CPU-heavy workloads.",
-    "tags": ["node.js", "architecture", "event loop"]
+    "tags": [
+      "node.js",
+      "architecture",
+      "event loop"
+    ]
   },
   {
     "id": 18,
     "topic": "Time and Date in JavaScript",
     "date": "Sept 18",
     "description": "Learn how to get and manipulate the current date and time in JavaScript.<br><br>Basic usage:<br><code>const now = new Date();<br>console.log(now.toISOString());</code><br><br>This gives you the current date and time in ISO format, which is great for logging, timestamps, and API responses.<br><br>You can extract parts of the date easily:<br><code>console.log(now.getFullYear()); // 2025<br>console.log(now.getMonth());    // 0-11 (January is 0)<br>console.log(now.getDate());     // 1-31<br>console.log(now.getHours());    // 0-23</code><br><br>Formatting dates for display:<br><code>console.log(now.toLocaleDateString('en-US')); // MM/DD/YYYY<br>console.log(now.toLocaleTimeString('en-US')); // HH:MM:SS AM/PM</code><br><br>For CRUDable applications, knowing how to create, compare, and format dates is crucial. For example, timestamps for creating, updating, or sorting data:<br><code>const createdAt = new Date();<br>const updatedAt = new Date(createdAt.getTime() + 1000*60*60); // +1 hour</code><br><br>Practice working with timezones, ISO strings, and timestamp comparisons to make your backend robust and predictable.",
-    "tags": ["javascript", "date", "time", "backend", "crud"]
+    "tags": [
+      "javascript",
+      "date",
+      "time",
+      "backend",
+      "crud"
+    ]
   },
   {
     "id": 19,
     "topic": "Deployment",
     "date": "Sept 18",
     "description": "Learn how to deploy your Node.js applications to a production environment using Vercel. This involves preparing your app, serving static files, handling routes, and configuring environment variables correctly.<br><br>Steps for deployment:<br>1. Make sure your project has a <code>package.json</code> and a clear entry point (e.g., <code>app.js</code>.<br>2. Test your app locally with <code>npm run dev</code> or <code>node app.js</code>.<br>3. Ensure <code>express.static()</code> serves your frontend assets correctly:<br><code>app.use(express.static('public'));</code><br>4. Configure environment variables for production (e.g., <code>PORT</code>, API keys) using a <code>.env</code> file or Vercel dashboard.<br><br>Vercel deployment steps:<br><ul><li>Sign up or log in at <a href='https://vercel.com'>vercel.com</a></li><li>Install Vercel to node.js or control deployment online in the dashboard by connecting to github repo</li><li>Vercel detects Node.js automatically and deploys the app</li></ul><br>After deployment, Vercel provides a public URL. Changes are automatically redeployed on push if connected to GitHub/GitLab.<br><br>Key tips:<ul><li>Keep <code>node_modules</code> out of version control — Vercel installs dependencies automatically</li><li>Use relative paths for static assets</li><li>Test your routes and fetch requests after deployment</li><li>Check logs via <code>vercel logs &lt;project-name&gt;</code> to debug issues</li></ul><br>This approach ensures your Node.js/Express app runs reliably in production with minimal setup and handles static assets, routes, and environment variables securely.",
-    "tags": ["deployment", "vercel", "node.js", "express", "production"]
+    "tags": [
+      "deployment",
+      "vercel",
+      "node.js",
+      "express",
+      "production"
+    ]
   },
   {
     "id": 20,
     "topic": "Serving Static Files in Express",
     "date": "Sept 25",
     "description": "Learn how to serve static assets like HTML, CSS, JS, images, or other files using Express.<br><br>Basic setup:<br><code>import express from 'express';<br>const app = express();<br>app.use(express.static('public'));</code><br><br>This will serve all files in the <code>public</code> folder at the root of your site. For example, <code>public/index.html</code> becomes available at <code>http://localhost:3000/index.html</code>.<br><br>Key points:<ul><li>Always keep static files in a dedicated folder (e.g., <code>public</code> or <code>assets</code>)</li><li>Middleware order matters — static middleware should usually be registered before dynamic routes</li><li>Never serve sensitive files — only expose files meant for public access</li></ul><br>Advanced example — serving a subfolder:<br><code>app.use('/static', express.static('assets'));</code><br>This makes <code>assets/style.css</code> accessible at <code>/static/style.css</code>.<br><br>Security considerations:<ul><li>Never serve <code>node_modules</code> or server-side config files</li><li>Sanitize user input if building download routes</li><li>Use <code>helmet</code> or similar middleware to add security headers</li></ul><br>Understanding this is essential for serving front-end files in SPAs, static sites, or when building SSR apps with Express.",
-    "tags": ["express", "static files", "security", "middleware"]
+    "tags": [
+      "express",
+      "static files",
+      "security",
+      "middleware"
+    ]
   },
   {
     "id": 21,
     "topic": "Exporting and Importing in Frontend",
     "date": "Sept 25",
     "description": "Learn how to organize your frontend code using ES Modules. Modern browsers support <code>type='module'</code> in script tags to import/export JavaScript files.<br><br>Example — exporting a function from <code>math.js</code>:<br><code>export function add(a, b) {<br>  return a + b;<br>}</code><br><br>Importing in another file (<code>app.js</code>):<br><code>import { add } from './math.js';<br>console.log(add(2,3)); // 5</code><br><br>Key points:<ul><li>Use <code>&lt;script type='module' src='app.js'&gt;&lt;/script&gt;</code> in HTML</li><li>Modules are always in strict mode by default</li><li>Top-level <code>import/export</code> only works with static paths or relative URLs</li></ul><br>Node.js difference:<ul><li>CommonJS: <code>require()</code> & <code>module.exports</code></li><li>ES Modules: <code>import/export</code></li></ul><br>Pros of ES Modules:<ul><li>Static analysis (tree-shaking for smaller bundles)</li><li>Consistent syntax with frontend</li><li>Better tooling support in modern editors and bundlers</li></ul><br>This setup helps keep your code modular, maintainable, and ready for scaling large frontend apps.",
-    "tags": ["frontend", "modules", "es modules", "javascript"]
+    "tags": [
+      "frontend",
+      "modules",
+      "es modules",
+      "javascript"
+    ]
   },
   {
     "id": 22,
     "topic": "Client vs. Server Fetching",
     "date": "Oct 2",
     "description": "Learn the difference between fetching data on the client (frontend) versus fetching on the server (backend). Understanding this helps structure your app efficiently and decide where data processing should happen.<br><br>**Client-side fetching:**<br>Runs in the browser using <code>fetch()</code> or Axios. Data is retrieved directly by the user’s browser and can update the DOM dynamically.<br><br>Example:<br><code>fetch('/api/users')<br>  .then(res =&gt; res.json())<br>  .then(data =&gt; console.log(data));</code><br><br>Pros:<ul><li>Dynamic updates without reloading the page</li><li>Good for SPAs and interactive UI</li></ul>Cons:<ul><li>Exposes API endpoints to the client</li><li>Can be slower if the user’s connection is bad</li></ul><br>**Server-side fetching:**<br>Data is fetched on the server before sending the HTML to the client, e.g., in SSR apps or Node.js endpoints.<br><br>Example in Express:<br><code>app.get('/users', async (req, res) =&gt; {<br>  const users = await getUsersFromDatabase();<br>  res.render('users', { users });<br>});</code><br><br>Pros:<ul><li>Endpoints are hidden from the client</li><li>Faster initial load and better SEO</li></ul>Cons:<ul><li>Page reload is required for updates unless combined with client-side fetching</li></ul><br>**Best practices:**<ul><li>Clearly separate client files (HTML, CSS, JS) from server files (Node.js, routes, controllers)</li><li>Use semantic HTML: <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></li><li>Decide which fetch makes sense per use case — e.g., SSR for SEO content, client fetch for dynamic UI updates</li></ul><br>Understanding this distinction helps you structure your apps cleanly and efficiently, and ensures data is fetched in the right place for performance, security, and maintainability.",
-    "tags": ["fetch", "client-server", "frontend", "ssr", "spa"]
+    "tags": [
+      "fetch",
+      "client-server",
+      "frontend",
+      "ssr",
+      "spa"
+    ]
   },
   {
     "id": 23,
     "topic": "Package.json Scripts",
     "date": "Oct 2",
     "description": "Learn how to define custom scripts in <code>package.json</code> to automate development and production tasks. Scripts let you run commands easily with <code>npm run &lt;script&gt;</code> instead of typing long terminal commands.<br><br>Example of <code>package.json</code> scripts:<br><code>{<br>  \"scripts\": {<br>    \"dev\": \"cross-env PORT=9090 nodemon app.js\",<br>    \"prod\": \"node app.js\",<br>    \"test\": \"jest\"<br>  }<br>}</code><br><br>**Key points:**<ul><li>Use <code>dev</code> for development with live reloading via <code>nodemon</code></li><li>Use <code>prod</code> to run the production server without auto-reload</li><li><code>cross-env</code> ensures environment variables work on all OS (Windows, Mac, Linux)</li><li>Keep scripts short and descriptive for team readability</li></ul><br>**Running scripts:**<br><code>npm run dev</code> — starts the dev server<br><code>npm run prod</code> — starts production<br><code>npm run test</code> — runs tests<br><br>Advanced tips:<ul><li>Combine multiple commands: <code>\"build\": \"npm run lint && npm run test && npm run prod\"</code></li><li>Use scripts for seeding databases, building front-end assets, or deploying</li><li>Keep sensitive values in <code>.env</code> files and reference them with <code>process.env</code></li></ul><br>Using scripts consistently makes your workflow repeatable, OS-independent, and easier to share with other developers.",
-    "tags": ["npm", "scripts", "automation", "node.js", "devops"]
+    "tags": [
+      "npm",
+      "scripts",
+      "automation",
+      "node.js",
+      "devops"
+    ]
   },
   {
     "id": 24,
     "topic": "Semantic HTML and Layout",
     "date": "Oct 2",
     "description": "Learn to structure your HTML using semantic tags to improve accessibility, maintainability, and SEO. Semantic HTML makes your code readable for both developers and assistive technologies (like screen readers).<br><br>Key tags and usage:<ul><li><code>&lt;header&gt;</code> — site or page header</li><li><code>&lt;nav&gt;</code> — navigation menu</li><li><code>&lt;main&gt;</code> — main content</li><li><code>&lt;section&gt;</code> — grouped content sections</li><li><code>&lt;article&gt;</code> — self-contained content (blog post, news article)</li><li><code>&lt;aside&gt;</code> — sidebars or related content</li><li><code>&lt;footer&gt;</code> — page or site footer</li></ul><br>Example layout:<br><code>&lt;header&gt;...&lt;/header&gt;<br>&lt;nav&gt;...&lt;/nav&gt;<br>&lt;main&gt;<br>  &lt;section&gt;...&lt;/section&gt;<br>  &lt;article&gt;...&lt;/article&gt;<br>&lt;/main&gt;<br>&lt;footer&gt;...&lt;/footer&gt;</code><br><br>Additional tips:<ul><li>Anchor footers to the bottom using CSS flexbox or grid (<code>min-height: 100vh</code>)</li><li>Organize assets in folders like <code>css/</code>, <code>js/</code>, <code>images/</code> for maintainability</li><li>Use semantic forms and labels to improve accessibility (<code>&lt;label for='email'&gt;Email&lt;/label&gt;</code>)</li></ul><br>Following these practices ensures your HTML is clean, accessible, and scalable, which is crucial for larger frontend projects.",
-    "tags": ["html", "semantic", "frontend", "accessibility", "layout"]
+    "tags": [
+      "html",
+      "semantic",
+      "frontend",
+      "accessibility",
+      "layout"
+    ]
   },
   {
     "id": 25,
     "topic": "Server-Side Rendering (SSR) vs Client-Side Rendering (CSR)",
     "date": "Oct 9",
     "description": "Learn the difference between SSR and CSR, and when to use each approach for web applications.<br><br>**Server-Side Rendering (SSR):**<br>HTML is generated on the server and sent fully rendered to the client.<br><br>Example with Express:<br><code>app.get('/', async (req, res) =&gt; {<br>  const data = await fetchDataFromDB();<br>  res.render('index', { data });<br>});</code><br><br>Pros:<ul><li>Faster initial load (HTML is ready)</li><li>Better SEO since crawlers get full content</li><li>No CORS issues when fetching data on the server</li></ul>Cons:<ul><li>Server does more work per request</li><li>Dynamic interactions require extra client-side JS</li></ul><br>**Client-Side Rendering (CSR):**<br>HTML is generated in the browser using JS frameworks or vanilla JS after fetching data.<br><br>Example:<br><code>fetch('/api/data')<br>  .then(res =&gt; res.json())<br>  .then(data =&gt; renderUI(data));</code><br><br>Pros:<ul><li>Less server load</li><li>Rich interactive UI</li></ul>Cons:<ul><li>Slower initial render</li><li>SEO requires extra work (e.g., pre-rendering or hydration)</li><li>CORS issues if fetching from external APIs</li></ul><br>**Best practices:**<ul><li>Use SSR for pages that benefit from SEO or fast initial load</li><li>Use CSR for highly interactive parts of your app (SPAs)</li><li>Combine approaches with hydration or frameworks like Next.js or SvelteKit for hybrid solutions</li></ul>",
-    "tags": ["ssr", "csr", "seo", "performance", "node.js"]
+    "tags": [
+      "ssr",
+      "csr",
+      "seo",
+      "performance",
+      "node.js"
+    ]
   },
   {
     "id": 26,
     "topic": "Reading Files in Node.js",
     "date": "Oct 9",
     "description": "Learn how to read files synchronously and asynchronously:<br><code>import fs from 'fs';<br>const data = fs.readFileSync('file.txt').toString();</code><br>Use synchronous reading only at server startup to avoid blocking requests.",
-    "tags": ["fs", "node.js", "backend"]
+    "tags": [
+      "fs",
+      "node.js",
+      "backend"
+    ]
   },
   {
     "id": 27,
     "topic": "CORS and SSR",
     "date": "Oct 9",
     "description": "Learn how Server-Side Rendering (SSR) naturally avoids many CORS (Cross-Origin Resource Sharing) issues because data fetching happens on the server, not the client.<br><br>**Problem with CSR:**<br>When fetching data from another domain in the browser, the browser enforces CORS policies:<br><code>fetch('https://api.example.com/data')<br>  .then(res =&gt; res.json())<br>  .then(data =&gt; console.log(data));</code><br>If the server doesn’t send the proper <code>Access-Control-Allow-Origin</code> header, the request fails.<br><br>**SSR solution:**<br>Fetching on the server avoids the browser entirely:<br><code>app.get('/', async (req, res) =&gt; {<br>  const data = await fetch('https://api.example.com/data').then(r =&gt; r.json());<br>  res.render('index', { data });<br>});</code><br><br>Since the server is making the request, it is not restricted by browser CORS policies. This makes SSR especially useful when:<ul><li>Integrating with external APIs that don’t support CORS</li><li>Rendering pages that require live data on first load</li></ul><br>**Tip:** Even with SSR, you should validate and sanitize external data to avoid security risks. Using SSR for these requests improves performance, SEO, and avoids client-side CORS headaches.",
-    "tags": ["cors", "ssr", "node.js", "security", "backend"]
+    "tags": [
+      "cors",
+      "ssr",
+      "node.js",
+      "security",
+      "backend"
+    ]
   },
   {
     "id": 28,
     "topic": "Improving Code Structure",
     "date": "Oct 9",
     "description": "Learn how to structure your Node.js/Express projects so your code is clean, modular, and maintainable. Avoid long, monolithic files by splitting functionality into bits that later on proberbly will include folders for routes and controllers to mimmic what we learn in java (model, controller, repository), but for now we only have utilities (util and here also data instead of a persistant DB solution).<br><br>**Example structure:**<br><code>project/<br>├─ app.js<br>├─ nodemon.js<br>├─ util/<br>│  └─ pagesUtil.js/<br>│  └─ templatingEngine.js<br>└─ public/<br>│  └─ index.html</code><br><br>**Tips:**<ul><li>Utilities for shared functions like formatting dates or validating input</li></ul>",
-    "tags": ["clean code", "node.js", "structure", "modular", "express"]
+    "tags": [
+      "clean code",
+      "node.js",
+      "structure",
+      "modular",
+      "express"
+    ]
   }
 ]

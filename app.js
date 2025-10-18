@@ -14,9 +14,8 @@ import {
 } from "./util/pagesUtil.js";
 
 app.get("/", (req, res) => {
-  const topics = getTopicsData();
-  const html = compileAllTopicsPage(topics);
-  res.send(html);
+  // No need for a frontpage for this project, so redirect to /topics ...
+  res.redirect("/topics");
 });
 
 app.get("/topics", (req, res) => {

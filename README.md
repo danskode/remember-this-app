@@ -6,4 +6,6 @@
 
 / Enjoy 🤓
 
+## See quick walk-through of web app 👇
+
 ![App walkthrough](/public/assets/images/RememberThisApp.gif)
